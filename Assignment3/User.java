@@ -1,7 +1,7 @@
 package com.coderscampus.Assignment3;
 
 public class User {
-	private String username;
+	private  String username;
 	private String password;
 	private String name;
 

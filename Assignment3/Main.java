@@ -9,12 +9,16 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 
-		fileReader();
-		loginCheck();
-
+		Main main = new Main();
+		main.fileReader();
+	/*	for (User user : Main.users) {
+			System.out.println(user);
+			}*/
+		main.loginCheck();
+		
 	}
 
-	private static void fileReader() throws FileNotFoundException, IOException {
+	private void fileReader() throws FileNotFoundException, IOException {
 
 		BufferedReader br = null;
 		try {
@@ -33,7 +37,7 @@ public class Main {
 
 	}
 
-	private static void loginCheck() {
+	private void loginCheck() {
 
 		Scanner scanner = new Scanner(System.in);
 		boolean control = true;
