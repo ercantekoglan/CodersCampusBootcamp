@@ -60,6 +60,20 @@ class CustomArrayListTest {
 	}
 
 	@Test
+	void should_throwException_by_removing() {
+		for (int i = 0; i < 20; i++) {
+			sut.add(i);
+		}
+
+		try {
+			sut.remove(29);
+			fail("Should have thrown an IndexOutOfBoundsException");
+		} catch (final IndexOutOfBoundsException e) {
+			assertTrue(true);
+		}
+	}
+
+	@Test
 	void should_get_item_index() {
 
 		for (int i = 0; i < 20; i++) {
