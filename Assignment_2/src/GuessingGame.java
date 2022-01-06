@@ -1,4 +1,3 @@
-package com.coderscampus.assignent2;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -14,7 +13,7 @@ public class GuessingGame {
 
 		System.out.println("Pick a number between 1 and 100");
 
-		int counter = 0;
+		int counter = 1;
 
 		while (true) {
 			int input = scanner.nextInt();
