@@ -16,14 +16,21 @@ class CustomArrayListTest {
 
 	@Test
 	void should_add_item_specified_index() {
-		for (int i = 0; i < 41; i++) {
+		for (int i = 0; i < 7; i++) {
 			sut.add(i);
 		}
-		sut.add(40, 2022);
-		assertEquals(2022, sut.get(40));
-
+		sut.add(0, 2022);
+		assertEquals(2022, sut.get(0));
+		
 		sut.add(0, 2021);
 		assertEquals(2021, sut.get(0));
+		
+		sut.add(0, 2023);
+		assertEquals(2023, sut.get(0));
+		
+		sut.add(0, 2024);
+		assertEquals(2024, sut.get(0));
+
 	}
 
 	@Test

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
 
@@ -16,8 +17,6 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 			}
 			myArray = temp;
-
-			// myArray = Arrays.copyOf(myArray, myArray.length*2);
 		}
 
 		myArray[size] = item;
@@ -30,6 +29,10 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 		if (index > size) {
 			throw new IndexOutOfBoundsException("Index " + index + " is out of bounds");
+		}
+
+		if (size == myArray.length) {
+			myArray = Arrays.copyOf(myArray, myArray.length * 2);
 		}
 
 		for (int i = size - 1; i >= index; i--) {
