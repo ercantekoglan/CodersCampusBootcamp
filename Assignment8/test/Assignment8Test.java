@@ -21,7 +21,7 @@ class Assignment8Test {
 
 		ExecutorService executor = Executors.newCachedThreadPool();
 
-		List<CompletableFuture<Void>> tasks = new ArrayList<>();
+		List<CompletableFuture<Void>> tasks = Collections.synchronizedList(new ArrayList<>());
 		List<Integer> numbers = new ArrayList<>();
 
 		for (int i = 0; i < 1000; i++) {
