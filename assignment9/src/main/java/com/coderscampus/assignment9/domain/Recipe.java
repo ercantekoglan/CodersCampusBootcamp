@@ -25,6 +25,10 @@ public class Recipe {
 	private Boolean vegan;
 
 	private Boolean vegetarian;
+	
+	public Recipe() {
+		
+	}
 
 	public Recipe(Integer cookingMinutes, Boolean dairyFree, Boolean glutenFree, String instructions,
 			Double preparationMinutes, Double pricePerServing, Integer readyInMinutes, Integer servings,
