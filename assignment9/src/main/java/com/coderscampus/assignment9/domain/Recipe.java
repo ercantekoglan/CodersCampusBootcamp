@@ -30,6 +30,7 @@ public class Recipe {
 		
 	}
 
+
 	public Recipe(Integer cookingMinutes, Boolean dairyFree, Boolean glutenFree, String instructions,
 			Double preparationMinutes, Double pricePerServing, Integer readyInMinutes, Integer servings,
 			Double spoonacularScore, String title, Boolean vegan, Boolean vegetarian) {
