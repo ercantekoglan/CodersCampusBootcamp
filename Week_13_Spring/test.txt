@@ -1,0 +1,2 @@
+Build web, including RESTful, applications using Spring MVC
+Apache Tomcat as the default embedded container.
