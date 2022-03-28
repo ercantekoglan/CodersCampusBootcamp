@@ -1,0 +1,26 @@
+package com.coderscampus.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.stereotype.Service;
+
+import com.coderscampus.domain.User;
+import com.coderscampus.repositories.UserRepository;
+
+@Service
+public class AdminService {
+	
+	@Autowired
+	private UserRepository userRepo;
+
+	// method level security....i.r securing your administrative areas.
+	// normal kullanicilarin admin icin design edilen yerlere ulasmamasini garantiler
+	@Secured({"ROLE_ADMIN","ROLE_SUPERUSER"}) // hangi rollerin erisebilecegini belirtiyoruz
+	//kullanmak icin spring security kisminda enable etmemiz gerekli
+	public List<User> getAllUserAccounts(){
+		
+		return userRepo.findAll();
+	}
+}

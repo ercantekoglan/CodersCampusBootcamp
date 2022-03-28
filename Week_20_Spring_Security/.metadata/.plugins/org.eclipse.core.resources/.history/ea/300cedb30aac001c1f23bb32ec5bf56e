@@ -1,0 +1,5 @@
+package com.coderscampus.security;
+
+public class MethodSecurityConfiguration {
+
+}

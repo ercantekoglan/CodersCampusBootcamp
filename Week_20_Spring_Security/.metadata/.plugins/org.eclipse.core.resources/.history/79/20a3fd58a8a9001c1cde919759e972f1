@@ -1,0 +1,46 @@
+package com.coderscampus.security;
+
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.coderscampus.domain.User;
+
+public class CustomSecurityUser extends User implements UserDetails {
+
+	private static final long serialVersionUID = 714171657542459215L;
+
+	public CustomSecurityUser() {
+
+	}
+
+	public CustomSecurityUser(User user) {
+		this.setAuthorities(getAuthorities());
+		this.setId(getId());
+		this.setPassword(getPassword());
+		this.setUsername(getUsername());
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	// degerler false olursa kullanici girisi kilitlenebilir.
+}
