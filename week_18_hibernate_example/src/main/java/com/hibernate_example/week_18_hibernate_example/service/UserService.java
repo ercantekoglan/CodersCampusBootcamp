@@ -88,6 +88,13 @@ public class UserService {
 		//	var olan user icin, bagimli olan address tablosu icin ya yeni bir satir ekler ya da var olani update eder.
 		// REMOVE existingUser -> setAdress(null) -- saveUser()
 		// 	user i sildigimizde, bagimli olan tablodaki(address) veride silinir. One-to-One da  ve one-to-many de orphanRemoval da eklememiz lazim.
+		
+		//orphanRemoval sadece @OneToOne ve @OneToMany ilişkilerde kullanılır. 
+		//CascadeType.REMOVE varsa, eğer parent nesne silinirse, child/dependent nesne de silinir.
+		//Ancak bu seçenek child nesneye null değeri atarsak veya başka bir child nesne ile değiştirirsek devreye girmez.
+		//Bu yeteneği de istiyorsak orphanRemoval=true  kullanmak gerekir. Yani bu seçenek ile başı boş kalan dependent nesne de otomatik olarak silinir.
+		
+		
 		if (user.getAddress() == null) {
 			Address address = new Address();
 			address.setAddressLine1("123 Fake St");
