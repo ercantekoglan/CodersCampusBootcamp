@@ -83,8 +83,11 @@ public class UserService {
 		//parent side a ekle
 		// CASCADE TYPES => PERSIST, MERGE, REMOVE 
 		// PERSIST new User() <-> new Adress() --> saveUser()
+		//	User a bagimli address tablosu varsa, user i kaydettigimde, address tablosunda bu user icin satir ekler. input yoksa null kaydeder.
 		// MERGE existingUser -> new/updating Adress() --> saveUser()
+		//	var olan user icin, bagimli olan address tablosu icin ya yeni bir satir ekler ya da var olani update eder.
 		// REMOVE existingUser -> setAdress(null) -- saveUser()
+		// 	user i sildigimizde, bagimli olan tablodaki(address) veride silinir. One-to-One da  ve one-to-many de orphanRemoval da eklememiz lazim.
 		if (user.getAddress() == null) {
 			Address address = new Address();
 			address.setAddressLine1("123 Fake St");
