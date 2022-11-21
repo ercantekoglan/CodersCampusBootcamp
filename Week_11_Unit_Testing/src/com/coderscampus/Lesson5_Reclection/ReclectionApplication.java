@@ -41,7 +41,9 @@ public class ReclectionApplication {
 		//	String nameOfRepository = nameOfClass + "Repository";
 		try {
 		//	Class<?> repositoryClass  = Class.forName(nameOfRepository);
+		//repo classindaki "save" methodunu c parametresi ile cekip(prevent overloading error), Method sinifina ait bir ojbe olarak kaydediyo.
 			Method saveMethod = repo.getClass().getMethod("save", c);
+		// INVOKING THE METHOD DYNAMICLY
 			saveMethod.invoke(repo, obj);
 		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 			System.err.println("Oops there was an error getting the save method");
