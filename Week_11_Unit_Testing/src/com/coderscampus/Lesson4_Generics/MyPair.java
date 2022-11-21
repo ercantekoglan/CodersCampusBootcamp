@@ -1,7 +1,9 @@
 package com.coderscampus.Lesson4_Generics;
 
 public class MyPair<K,V> {
-
+//	public class MyPair<K, V , T, A, B> {
+//	private Integer id;
+//	private String name;
 	private K key;
 	private V value;
 	
